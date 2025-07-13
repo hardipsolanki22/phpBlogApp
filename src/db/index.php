@@ -9,5 +9,5 @@
  if($conn)
      echo "Database Connect Successfully: ";
  else
-    mysqli_error($con);
+    die("Database conntion failed". $conn->connect_error);
 ?>
