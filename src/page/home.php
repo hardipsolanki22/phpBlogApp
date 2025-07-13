@@ -6,15 +6,8 @@ if (!isset($_SESSION["userId"])) {
     exit();
 }
 $user = $_SESSION["userId"];
-
-if (isset($_POST["logout"])) {
-    session_unset();        // remove all session variables
-    session_destroy();      // destroy session
-    header("Location: ../auth/signin.php");
-    exit();
-}
-
 ?> 
+
 <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -39,23 +32,23 @@ if (isset($_POST["logout"])) {
                     <a class="item" href="./myBlog.php">My Blog</a>
                 </li>
                  <!-- show logout button whne user is exist -->
-                <?php
-                 if ($user) {?>
-                 <form action="" method="POST">
+                 <form action="../utils/logout.php" method="POST">
                      <li>
                          <button class="item" name="logout" type="submit">
                             Logout
                         </button>
                     </li>
-
                  </form>
-                <?php } ?>
             </ul>
+            <div class="menu_bar">
+                <p>&#8801;</p>
+            </div>
         </nav>
         <main>
             <div>
 
             </div>
         </main>
+        <script src="./script.js"></script>
  </body>
  </html> 

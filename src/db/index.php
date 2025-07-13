@@ -6,8 +6,6 @@
 
  $conn = new mysqli($hostname, $username, $password, $dbname);
 
- if($conn)
-     echo "Database Connect Successfully: ";
- else
+ if(!$conn)
     die("Database conntion failed". $conn->connect_error);
 ?>
