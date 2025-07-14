@@ -105,7 +105,6 @@ input {
     padding: 10px;  
     border: none;
     border-radius: 7px;
-    width: 100%;
     font-weight: bolder;
 }:focus{
     outline: none;
