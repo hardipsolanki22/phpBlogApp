@@ -1,6 +1,13 @@
 <?php 
 include "../db/index.php";
- session_start();
+  session_start();
+
+ // protect route
+  if (isset($_SESSION["userId"])) {
+    header("Location: ../page/home/");
+    exit();
+  }
+
   if (isset($_POST["form_submit"])) {
     $error = NULL;
     $email = trim($_POST["email"]);
@@ -37,16 +44,14 @@ include "../db/index.php";
     $user = $result->fetch_assoc();
 
     if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['userId'] = $user['id'];
-    header("Location: ../page/home.php");
-    exit();
-} else {
-    $error = "Invalid password";
-    header("Location: signin.php?error=$error");
-    exit();
-}
-    // get user
-
+      $_SESSION['userId'] = $user['id'];
+      header("Location: ../page/home/");
+      exit();
+    } else {
+     $error = "Invalid password";
+      header("Location: signin.php?error=$error");
+      exit();
+    }
     $conn->close();
   } 
 ?>
@@ -100,16 +105,16 @@ include "../db/index.php";
         <div>
             <label for="email">Email</label>
            <div>
-             <input type="email" name="email" id="email">
+             <input type="email" name="email" id="email" placeholder="Enter email">
            </div>
         </div>
         <div>
             <label for="password">Password</label>
            <div>
-             <input type="password" name="password" id="password">
+             <input type="password" name="password" id="password" placeholder="Enter password">
            </div>
         </div>
-             <input class="submit-btn" value="Login" type="submit" name="form_submit"/>
+               <button class="submit-btn" type="submit" name="form_submit">Login</button>
 
     </form>
 </body>

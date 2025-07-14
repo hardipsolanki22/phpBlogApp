@@ -1,5 +1,12 @@
 <?php  
 include "../db/index.php";
+  session_start();
+  
+  // protect route
+  if (isset($_SESSION["userId"])) {
+    header("Location: ../page/home/");
+    exit();
+  }
 
   if (isset($_POST["form_submit"])) {
     $error = NULL;
@@ -122,7 +129,7 @@ include "../db/index.php";
              <input type="password" name="password" id="password">
            </div>
         </div>
-        <input class="submit-btn" value="Regiter" type="submit" name="form_submit"/>
+         <button class="submit-btn" type="submit" name="form_submit">Regiter</button>
     </form>
 </body>
 </html>
