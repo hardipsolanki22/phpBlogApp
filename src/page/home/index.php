@@ -1,13 +1,3 @@
-<?php 
-session_start();
-
-// protect route
-if (!isset($_SESSION["userId"])) {
-    header("Location: ../../auth/signin.php");
-    exit();
-}
-?> 
-
 <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -29,7 +19,7 @@ if (!isset($_SESSION["userId"])) {
                     <a class="item" class="item" href="../postForm/">Create Blog</a>
                 </li>
                 <li>
-                    <a class="item" href="../postForm/">My Blog</a>
+                    <a class="item" href="../myPosts/">My Blog</a>
                 </li>
                  <form action="../../utils/logout.php" method="POST">
                      <li>
@@ -43,38 +33,53 @@ if (!isset($_SESSION["userId"])) {
                 <p>&#8801;</p>
             </div>
         </nav>
-        <main>
-            <div class="post_container">
+         <main>
+
+<?php 
+include "../../db/index.php";
+    session_start();
+
+    // protect route
+    if (!isset($_SESSION["userId"])) {
+        header("Location: ../../auth/signin.php");
+        exit();
+    }
+    // get all posts and join user table based on userId
+    $query = "SELECT users.username , posts.description, posts.image
+    FROM users
+    INNER JOIN posts ON 
+    users.id = posts.user";
+    $posts = $conn->prepare($query); 
+    $posts->execute();              
+    $result = $posts->get_result();
+
+    if ($result->num_rows > 0) {
+        while ($post = $result->fetch_assoc()) {
+            ?>
+             <div class="post_container">
+                <div class="user">
+                    <img class="user_avatar" src="../../assets/userDeafultAavtar.png" alt="avarae">
+                    <p><?php echo $post["username"]; ?></p>
+                </div>
                 <div class="post_img">
-                    <img src="../../assets/Screenshot (32).png" alt="post">
+                    <img src="../../public/<?php echo $post['image']; ?>" alt="post">
                 </div>
                 <div class="post_description">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                    </p>
+                    <p><?php echo $post["description"] ?></p>
                 </div>
             </div>
-            <div class="post_container">
-                <div class="post_img">
-                    <img src="../../assets/Screenshot (32).png" alt="post">
-                </div>
-                <div class="post_description">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, sed?
-                    </p>
-                </div>
-            </div>
+            <?php
+        }
+    } else {
+        ?>
+        <div class="no_posts">
+            <h1>No Posts Found</h1>
+        </div>
+        <?php
+    }
+    $conn->close();
+?>
         </main>
-        <script src="./script.js"></script>
+        <script src="../../utils/script.js"></script>
  </body>
  </html> 

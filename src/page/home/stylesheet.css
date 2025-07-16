@@ -116,6 +116,22 @@ main {
     box-shadow:2px 2px 2px darkgray;
     padding: 10px;
 }
+.user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    padding: 3px;
+}
+.user_avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 5rem;
+}
+.user > p {
+    color: slategray;
+}
 .post_img {
     width: 80%;
     /* height: 200px; */
@@ -130,9 +146,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 1rem;
 }
 .post_description > p {
+    width: 100%;
      text-align: start;
 }
 .btn_container {
@@ -150,6 +167,9 @@ main {
     border-radius: 7px;
     font-weight: bolder;
     /* position: absolute; */
+}
+.no_posts {
+    margin-top: 1rem;
 }
 /* For small devices */
 @media (min-width: 851px) {
