@@ -68,6 +68,8 @@ include "../db/index.php";
       exit();
     } else {
       $error = "Internal server error while create user";
+      header("Location: signup.php?error=$error");
+      exit();
     }
 
     $conn->close();
