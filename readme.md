@@ -1,6 +1,6 @@
 # PHP Blog Application
 
-A simple and elegant blog website built with PHP and MySQL database. This project was developed as a college semester 5 project, featuring a complete blog management system with admin functionality.
+A simple and elegant blog website built with PHP and MySQL database. This project was developed as a college semester 5 project, featuring a complete blog management system with user functionality.
 
 ![Blog Application](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
@@ -8,23 +8,55 @@ A simple and elegant blog website built with PHP and MySQL database. This projec
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+## 🖼️ Application Screenshots
+
+### Homepage - Desktop View
+![Homepage Desktop](./screenshots/Screenshot-560.jpg)
+*Main homepage showing blog posts with clean layout and navigation. Users can see all published blog posts with author information and post previews.*
+
+### Homepage - Mobile Responsive View  
+![Homepage Mobile](./screenshots/Screenshot-565.jpg)
+*Mobile-optimized view of the homepage with responsive navigation menu, ensuring great user experience across all devices.*
+
+### User Registration Page
+![User Registration](./screenshots/Screenshot-558.jpg)
+*User registration form with fields for username, email, and password. Clean and simple signup process for new users.*
+
+### User Login Page
+![User Login](./screenshots/Screenshot-557.jpg)
+*User login interface with email and password fields. Includes link to registration page for new users.*
+
+### Create Blog Post Form
+![Create Blog Post](./screenshots/Screenshot-561.jpg)
+*Blog post creation form where users can write new posts with title, description, and image upload functionality.*
+
+### Blog Post Details - Desktop
+![Blog Post Details Desktop](./screenshots/Screenshot-562.jpg)
+*Individual blog post view showing full content, author information, and delete functionality for post owners.*
+
+### Blog Post Details - Mobile
+![Blog Post Details Mobile](./screenshots/Screenshot-563.jpg)
+*Mobile view of individual blog post with responsive design maintaining readability and functionality on smaller screens.*
+
+### User Dashboard Navigation
+![User Dashboard](./screenshots/Screenshot-564.jpg)
+*User navigation showing logged-in state with options like Home, Create Blog, My Blog, and Logout functionality.*
+
+### User Authentication Flow
+![Authentication](./screenshots/Screenshot-559.jpg)
+*Login/Signup navigation for guest users, providing easy access to authentication features.*
+
 ## 🚀 Features
 
 ### User Features
-- **Blog Post Viewing**: Browse and read all published blog posts
-- **Category-wise Posts**: Filter posts by categories
-- **Search Functionality**: Find posts by keywords
-- **Responsive Design**: Mobile and tablet friendly interface
-- **Comment System**: Users can comment on blog posts
-- **User Registration & Login**: Account creation and authentication
-
-### Admin Features [web:135]
-- **Post Management**: Create, Read, Update, Delete (CRUD) operations for blog posts
-- **Category Management**: Add, edit, and delete post categories
-- **User Management**: Admin can manage user accounts
-- **Dashboard**: Comprehensive admin dashboard with statistics
-- **Media Upload**: Upload and manage images for blog posts
-- **Draft System**: Save posts as drafts before publishing
+- **User Registration & Login**: Account creation and authentication system with secure login/logout functionality
+- **Blog Post Viewing**: Browse and read all published blog posts with pagination and search capabilities
+- **Create New Blog Post**: Registered users can create and publish their own blog posts with rich text editor
+- **Edit & Update Posts**: Users can edit and update their own published blog posts anytime
+- **My Blog Posts**: Personal dashboard where users can view all their created blog posts in one place
+- **Post Management**: Users can delete their own blog posts if needed
+- **Image Upload**: Upload and attach images to blog posts for better visual content
+- **Responsive Design**: Mobile and tablet friendly interface that works across all devices
 
 ## 🛠️ Technologies Used
 
@@ -50,4 +82,50 @@ Before running this application, make sure you have:
 ## 🔧 Installation & Setup
 
 ### 1. Clone the Repository
+
+### 2. Setup XAMPP Environment
+
+1. **Start XAMPP Control Panel**
+2. **Start Apache** and **MySQL** services
+3. **Copy project folder** to `C:\xampp\htdocs\` (Windows) or `/opt/lampp/htdocs/` (Linux)
+
+### 3. Database Configuration
+
+1. **Open phpMyAdmin**: Go to `http://localhost/phpmyadmin`
+2. **Create Database**:
+   - Click "New" to create a new database
+   - Name it `blog_db` or as per your configuration
+3. **Import Database**:
+   - Look for `database.sql` file in the project
+   - Import it using phpMyAdmin import feature
+
+### 4. Configure Database Connection
+
+Update the database configuration in your PHP files:
+
+### 5. Run the Application
+
+1. **Access the application**: `http://localhost/phpBlogApp/`
+2. **Register/Login**: Create a new account or login to start blogging
+
+## 📁 Project Structure
+
+phpBlogApp/
+├── src/
+│ └── page/
+│ ├── home/ # Homepage files
+│ ├── auth/ # Authentication pages
+│ │ ├── signin.php # User login page
+│ │ └── signup.php # User registration page
+│ └── blog/ # Blog functionality
+│ ├── create.php # Create new blog post
+│ └── view.php # View blog posts
+├── assets/ # Static assets
+│ ├── css/
+│ ├── js/
+│ └── images/
+├── screenshots/ # Application screenshots
+├── uploads/ # User uploaded files
+├── database.sql # Database schema
+└── README.md
 

@@ -106,6 +106,7 @@ input {
     border: none;
     border-radius: 7px;
     font-weight: bolder;
+    cursor: pointer;
 }:focus{
     outline: none;
 }
