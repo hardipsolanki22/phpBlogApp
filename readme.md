@@ -11,39 +11,39 @@ A simple and elegant blog website built with PHP and MySQL database. This projec
 ## 🖼️ Application Screenshots
 
 ### Homepage - Desktop View
-![Homepage Desktop](./screenshots/Screenshot-560.jpg)
+![Homepage Desktop](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(560).png)
 *Main homepage showing blog posts with clean layout and navigation. Users can see all published blog posts with author information and post previews.*
 
 ### Homepage - Mobile Responsive View  
-![Homepage Mobile](./screenshots/Screenshot-565.jpg)
+![Homepage Mobile](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(564).png)
 *Mobile-optimized view of the homepage with responsive navigation menu, ensuring great user experience across all devices.*
 
 ### User Registration Page
-![User Registration](./screenshots/Screenshot-558.jpg)
+![User Registration](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(558).png)
 *User registration form with fields for username, email, and password. Clean and simple signup process for new users.*
 
 ### User Login Page
-![User Login](./screenshots/Screenshot-557.jpg)
+![User Login](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(557).png)
 *User login interface with email and password fields. Includes link to registration page for new users.*
 
 ### Create Blog Post Form
-![Create Blog Post](./screenshots/Screenshot-561.jpg)
+![Create Blog Post](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(559).png)
 *Blog post creation form where users can write new posts with title, description, and image upload functionality.*
 
 ### Blog Post Details - Desktop
-![Blog Post Details Desktop](./screenshots/Screenshot-562.jpg)
+![Blog Post Details Desktop](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(562).png)
 *Individual blog post view showing full content, author information, and delete functionality for post owners.*
 
 ### Blog Post Details - Mobile
-![Blog Post Details Mobile](./screenshots/Screenshot-563.jpg)
+![Blog Post Details Mobile](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(563).png)
 *Mobile view of individual blog post with responsive design maintaining readability and functionality on smaller screens.*
 
 ### User Dashboard Navigation
-![User Dashboard](./screenshots/Screenshot-564.jpg)
+![User Dashboard](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(561).png)
 *User navigation showing logged-in state with options like Home, Create Blog, My Blog, and Logout functionality.*
 
 ### User Authentication Flow
-![Authentication](./screenshots/Screenshot-559.jpg)
+![Authentication](https://github.com/hardipsolanki22/phpBlogApp/blob/96fcd2a08cb3372a0cee6845c7384f15e3c08f67/screenshots/Screenshot%20(558).png)
 *Login/Signup navigation for guest users, providing easy access to authentication features.*
 
 ## 🚀 Features
@@ -107,25 +107,3 @@ Update the database configuration in your PHP files:
 
 1. **Access the application**: `http://localhost/phpBlogApp/`
 2. **Register/Login**: Create a new account or login to start blogging
-
-## 📁 Project Structure
-
-phpBlogApp/
-├── src/
-│ └── page/
-│ ├── home/ # Homepage files
-│ ├── auth/ # Authentication pages
-│ │ ├── signin.php # User login page
-│ │ └── signup.php # User registration page
-│ └── blog/ # Blog functionality
-│ ├── create.php # Create new blog post
-│ └── view.php # View blog posts
-├── assets/ # Static assets
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── screenshots/ # Application screenshots
-├── uploads/ # User uploaded files
-├── database.sql # Database schema
-└── README.md
-
