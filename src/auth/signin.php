@@ -66,7 +66,7 @@ include "../db/index.php";
 </head>
 <body>
    <nav class="nav_bar">
-            <a class="brand" href="../page/home.php">
+            <a class="brand" href="#">
                 Blog
             </a>
             <ul class="nav_items">
