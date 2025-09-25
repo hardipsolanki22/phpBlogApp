@@ -52,7 +52,6 @@ A simple and elegant blog website built with PHP and MySQL database. This projec
 - **User Registration & Login**: Account creation and authentication system with secure login/logout functionality
 - **Blog Post Viewing**: Browse and read all published blog posts with pagination and search capabilities
 - **Create New Blog Post**: Registered users can create and publish their own blog posts with rich text editor
-- **Edit & Update Posts**: Users can edit and update their own published blog posts anytime
 - **My Blog Posts**: Personal dashboard where users can view all their created blog posts in one place
 - **Post Management**: Users can delete their own blog posts if needed
 - **Image Upload**: Upload and attach images to blog posts for better visual content
